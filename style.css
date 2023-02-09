@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: 
+}
+
+#cocktailList {
+    margin: 2rem;
+  }
+
+  .card {
+    text-align: center;
+    border: black solid 2px;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #800089
+  }
+
+  .form-submit-button {
+	background: #B9DFFF;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
+
+.form-submit-button:hover {
+	background: #800089;
+	color: #fff;
+	border: 1px solid #eee;
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #eee;
+	text-shadow: none;
+}
