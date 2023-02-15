@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         form1.addEventListener('submit', (e) => {
             
             e.preventDefault();
+            document.getElementById('cocktailList').replaceChildren();
             const inputOne = document.querySelector('#searchByName')
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
             .then(res => res.json())
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
         form2.addEventListener('submit', (e) => {
             
             e.preventDefault();
+
+            document.getElementById('cocktailList').replaceChildren()
             const inputTwo = document.querySelector('#searchByLiquor')
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
             .then(res => res.json())
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         else { liFour.textContent = `${cocktailData.strMeasure4} ${cocktailData.strIngredient4}`}
         p.textContent = cocktailData.strInstructions
 
-        // img.src = cocktailData.strDrinkThumb
+        img.src = cocktailData.strDrinkThumb
         img.className = 'cocktail-avatar'
         div.className = 'card'
 
