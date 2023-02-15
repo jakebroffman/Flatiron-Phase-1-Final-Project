@@ -8,10 +8,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             e.preventDefault();
             const inputOne = document.querySelector('#searchByName')
-            console.log(inputOne.value)
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
             .then(res => res.json())
-            .then(data => renderCocktailCard(data))
+            .then(cocktailData => cocktailData.drinks.forEach(renderCocktailCard))
             .catch(e => console.error(e))
         })
 
@@ -19,10 +18,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             e.preventDefault();
             const inputTwo = document.querySelector('#searchByLiquor')
-            console.log(inputTwo.value)
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
-            .ten(res => res.json())
-            .then(cocktailData => renderCocktailCard(cocktailData))
+            .then(res => res.json())
+            .then(cocktailData => console.log(cocktailData))
             .catch(e => console.error(e))
         })
     
@@ -47,7 +45,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         liFour.textContent = `${cocktailData.strIngredient4}, Measurement: ${cocktailData.strMeasure4}`
         p.textContent = cocktailData.strInstructions
 
-        img.src = cocktailData.strDrinkThumb
+        // img.src = cocktailData.strDrinkThumb
         img.className = 'cocktail-avatar'
         div.className = 'card'
 
