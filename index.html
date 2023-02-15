@@ -2,13 +2,12 @@
 <html lang = "en">
     <head>
         <link rel="stylesheet" href='style.css' />
-        <script src='src/index.js'></script>
         <title>Cocktail Recipe Database</title>
     </head>
     <body>
         <h1>Cocktail Recipe Database</h1>
         <section>
-            <form>
+            <form id="nameSearch">
                 <label for="searchbyCocktailName">Find Cocktails by Name:</label>
                 <input id="searchByName" type="text" placeholder="Enter Cocktail Name Here:"/>
                 <input type="submit" class="form-submit-button"/>
@@ -16,7 +15,7 @@
         </section>
         <br>
         <section>
-            <form>
+            <form id="liquorSearch">
                 <label for="searchByLiquor">Find Cocktails by Liquor:</label>
                 <input id="searchByLiquor" type="text" placeholder="Enter Liquor Type Here:"/>
                 <input type="submit" class="form-submit-button"/>
@@ -25,5 +24,6 @@
         <section id="cocktailDetails">
             <div id="cocktailList"></div>
         </section>
+        <script src='index.js'></script>
     </body>
 </html>
