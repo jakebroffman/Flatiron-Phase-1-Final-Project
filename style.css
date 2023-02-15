@@ -1,18 +1,39 @@
 body {
-    margin: 0;
-    font-family: 
+    padding: 20px;
+    margin: 40;
+    font-family: monospace; 
+}
+
+h1 {
+    text-align: center;
+    font-size: 42px;
 }
 
 #cocktailList {
     margin: 2rem;
   }
 
+  input {
+    font-family: monospace;
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+  }
+
+img.cocktail-avatar {
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
   .card {
     text-align: center;
     border: black solid 2px;
     padding: 1rem;
-    width: 15rem;
-    height: 25rem;
+    width: 25rem;
+    height: 35rem;
     display: inline-grid;
     margin: 1rem 2rem;
     box-shadow: 3px 4px #800089
@@ -20,7 +41,7 @@ body {
 
   .form-submit-button {
 	background: #B9DFFF;
-	color: #fff;
+	color: rgb(14, 7, 209);
 	border: 1px solid #eee;
 	border-radius: 20px;
 	box-shadow: 5px 5px 5px #eee;
