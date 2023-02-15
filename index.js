@@ -10,23 +10,35 @@ document.addEventListener('DOMContentLoaded', (e) => {
             document.getElementById('cocktailList').replaceChildren();
             document.getElementById('ingredientList').replaceChildren();
             const inputOne = document.querySelector('#searchByName')
+            
+            if (inputOne.value.length > 0) {
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
             .then(res => res.json())
             .then(cocktailData => cocktailData.drinks.forEach(renderCocktailCard))
             .catch(e => console.error(e))
+            }
+            else {
+
+            }
         })
 
         form2.addEventListener('submit', (e) => {
             
             e.preventDefault();
 
-            document.getElementById('ingredientList').replaceChildren()
+            document.getElementById('ingredientList').replaceChildren();
             document.getElementById('cocktailList').replaceChildren();
             const inputTwo = document.querySelector('#searchByLiquor')
+
+            if (inputTwo.value.length > 0) {
             fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
             .then(res => res.json())
             .then(ingredientData => ingredientData.ingredients.forEach(renderIngredientCard))
             .catch(e => console.error(e))
+            }
+            else {
+
+            }
         })
     
      
@@ -114,4 +126,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
         document.querySelector('#ingredientList').append(div)
     }
     
+        const clearButton = document.getElementById('clearButton')
+
+        clearButton.addEventListener('click', (e) => {
+            
+            document.getElementById('ingredientList').replaceChildren();
+            document.getElementById('cocktailList').replaceChildren();
+
+        })
     })
