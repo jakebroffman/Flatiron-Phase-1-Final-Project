@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         const form2 = document.getElementById('liquorSearch');
         
         form1.addEventListener('submit', (e) => {
-
+            
             e.preventDefault();
             const inputOne = document.querySelector('#searchByName')
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
         })
 
         form2.addEventListener('submit', (e) => {
-
+            
             e.preventDefault();
             const inputTwo = document.querySelector('#searchByLiquor')
             fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
             .then(res => res.json())
-            .then(cocktailData => console.log(cocktailData))
+            .then(cocktailData => cocktailData.ingredients.forEach(renderIngredientCard))
             .catch(e => console.error(e))
         })
     
@@ -39,10 +39,22 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         h2.textContent = cocktailData.strDrink
         ul.textContent = "Drink Ingredients:"
-        liOne.textContent = `${cocktailData.strIngredient1}, Measurement: ${cocktailData.strMeasure1}`
-        liTwo.textContent = `${cocktailData.strIngredient2}, Measurement: ${cocktailData.strMeasure2}`
-        liThree.textContent = `${cocktailData.strIngredient3}, Measurement: ${cocktailData.strMeasure3}`
-        liFour.textContent = `${cocktailData.strIngredient4}, Measurement: ${cocktailData.strMeasure4}`
+        if (cocktailData.strMeasure1 === null) {
+            liOne.innerHTML = ""
+        }
+        else { liOne.textContent = `${cocktailData.strMeasure1} ${cocktailData.strIngredient1}`}
+        if (cocktailData.strMeasure2 === null) {
+            liTwo.innerHTML = ""
+        }
+        else {liTwo.textContent = `${cocktailData.strMeasure2} ${cocktailData.strIngredient2}`}
+        if (cocktailData.strMeasure3 === null) {
+            liThree.innerHTML = ""
+        }
+        else {liThree.textContent = `${cocktailData.strMeasure3} ${cocktailData.strIngredient2}`}
+        if (cocktailData.strMeasure4 === null) { 
+                liFour.innerHTML = ""
+            }
+        else { liFour.textContent = `${cocktailData.strMeasure4} ${cocktailData.strIngredient4}`}
         p.textContent = cocktailData.strInstructions
 
         // img.src = cocktailData.strDrinkThumb
@@ -53,7 +65,5 @@ document.addEventListener('DOMContentLoaded', (e) => {
         div.append(h2, img, ul, p)
         document.querySelector('#cocktailList').append(div)
     }
-
-
     
 })
