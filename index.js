@@ -1,18 +1,17 @@
 
 document.addEventListener('DOMContentLoaded', (e) => {    
    
-    function handleForms (e) {
-     
-        const form1 = document.getElementById('nameSearch')
-        const form2 = document.getElementByID('liquorSearch')
+        const form1 = document.getElementById('nameSearch');
+        const form2 = document.getElementById('liquorSearch');
         
         form1.addEventListener('submit', (e) => {
 
-            e.preventDefualt();
+            e.preventDefault();
             const inputOne = document.querySelector('#searchByName')
-            console.log(input.value)
-            fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
-            .then(cocktailData => renderCocktailCard(cocktailData))
+            console.log(inputOne.value)
+            fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inputOne.value}`)
+            .then(res => res.json())
+            .then(data => renderCocktailCard(data))
             .catch(e => console.error(e))
         })
 
@@ -20,13 +19,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             e.preventDefault();
             const inputTwo = document.querySelector('#searchByLiquor')
-            console.log(input.value)
-            fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
+            console.log(inputTwo.value)
+            fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?i=${inputTwo.value}`)
+            .ten(res => res.json())
             .then(cocktailData => renderCocktailCard(cocktailData))
             .catch(e => console.error(e))
         })
-        
-    }
+    
      
     function renderCocktailCard(cocktailData) {
 
@@ -42,10 +41,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         h2.textContent = cocktailData.strDrink
         ul.textContent = "Drink Ingredients:"
-        liOne.textContent = `${cocktailData.strIngredient1}, Measurement: ${cocktail.Data.strMeasure1}`
-        liTwo.textContent = `${cocktailData.strIngredient2}, Measurement: ${cocktail.Data.strMeasure2}`
-        liThree.textContent = `${cocktailData.strIngredient3}, Measurement: ${cocktail.Data.strMeasure3}`
-        liFour.textContent = `${cocktailData.strIngredient4}, Measurement: ${cocktail.Data.strMeasure4}`
+        liOne.textContent = `${cocktailData.strIngredient1}, Measurement: ${cocktailData.strMeasure1}`
+        liTwo.textContent = `${cocktailData.strIngredient2}, Measurement: ${cocktailData.strMeasure2}`
+        liThree.textContent = `${cocktailData.strIngredient3}, Measurement: ${cocktailData.strMeasure3}`
+        liFour.textContent = `${cocktailData.strIngredient4}, Measurement: ${cocktailData.strMeasure4}`
         p.textContent = cocktailData.strInstructions
 
         img.src = cocktailData.strDrinkThumb
