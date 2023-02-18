@@ -28,18 +28,46 @@ img.cocktail-avatar {
     margin-right: auto;
 }
 
-  .card {
+  .cocktailCard {
     text-align: center;
     border: black solid 2px;
     padding: 1rem;
-    width: 25rem;
-    height: 35rem;
+    width: 35rem;
+    height: 45rem;
     display: inline-grid;
     margin: 1rem 2rem;
     box-shadow: 3px 4px #800089
   }
 
-  .form-submit-button {
+  .header-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    }
+
+.header-text {
+    text-align: center;
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+  .ingredientCard {
+    text-align: center;
+    border: black solid 2px;
+    padding: 1rem;
+    width: auto;
+    height: auto;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #800089
+  }
+
+  .button {
+    font-family: monospace;
 	background: #B9DFFF;
 	color: rgb(14, 7, 209);
 	border: 1px solid #eee;
@@ -48,7 +76,8 @@ img.cocktail-avatar {
 	text-shadow: none;
 }
 
-.form-submit-button:hover {
+.button:hover {
+    font-family: monospace;
 	background: #800089;
 	color: #fff;
 	border: 1px solid #eee;
