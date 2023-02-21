@@ -9,17 +9,19 @@ h1 {
     font-size: 42px;
 }
 
+
 #cocktailList {
     margin: 2rem;
-  }
+    display: ;
+}
 
-  input {
+input {
     font-family: monospace;
     display:block;
     width:100%;
     margin:10px 0;
     padding:10px;
-  }
+}
 
 img.cocktail-avatar {
     width: 200px;
@@ -28,23 +30,24 @@ img.cocktail-avatar {
     margin-right: auto;
 }
 
-  .cocktailCard {
+.cocktailCard {
     text-align: center;
     border: black solid 2px;
     padding: 1rem;
-    width: 35rem;
-    height: 45rem;
-    display: inline-grid;
+    width: min-content;
+    height: min-content;
+    display: inline-block;
     margin: 1rem 2rem;
     box-shadow: 3px 4px #800089
+    
   }
 
-  .header-image {
+.header-image {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     background-size: cover;
-    }
+}
 
 .header-text {
     text-align: center;

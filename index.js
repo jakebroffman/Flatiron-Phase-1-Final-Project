@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         
         for (const [key, value] of Object.entries(ingredients)) {
             const ingredientList = document.createElement('ul')
+            ingredientList.id = "ingredientList"
             if (value !== null) {
                 const li = document.createElement('li')
                 li.innerText = value
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         for (const [key, value] of Object.entries(measurements)) {
             const measurementList = document.createElement('ul')
+            measurementList.Id = "measurementList"
             if (value !== null) {
                 const li = document.createElement('li')
                 li.innerText = value
