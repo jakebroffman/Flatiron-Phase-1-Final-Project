@@ -8,9 +8,9 @@ Project Description:
 Usage:
     Included below are two screenshots of the application performing a succesful search to provide documentation of what to expect when using the application:
 
-    ![My Image](images/screenshot.png)
+    ![My Image](.../Images/screenshot.png)
 
-    ![My Image](images/screenshot2.png)
+    ![My Image](.../Images/screenshot2.png)
 
 
 Image of Cocktails in the app header shot by Travis Rathbone
