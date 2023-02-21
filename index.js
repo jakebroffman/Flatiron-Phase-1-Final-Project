@@ -64,59 +64,85 @@ document.addEventListener('DOMContentLoaded', (e) => {
         secondH3.textContent = "Directions:"
 
 
-        if (cocktailData.strIngredient1 === null && cocktailData.strMeasure1 === null) {
-            pOne.remove()
+        if (cocktailData.strIngredient1 === null) {
+            pOne.remove();
         }
-        else { pOne.textContent = `${cocktailData.strMeasure1} ${cocktailData.strIngredient1}`}
+        else {
+            pOne.textContent = `${cocktailData.strMeasure1} ${cocktailData.strIngredient1}`
+        }
+
         if (cocktailData.strIngredient2 === null) {
-            pTwo.remove()
+            pTwo.remove();
         }
-        else {pTwo.textContent = `${cocktailData.strMeasure2} ${cocktailData.strIngredient2}`}
+        else {
+            pTwo.textContent = `${cocktailData.strMeasure2} ${cocktailData.strIngredient2}`
+        }
+
         if (cocktailData.strIngredient3 === null) {
-            pThree.remove()
+            pThree.remove();
         }
-        else {pThree.textContent = `${cocktailData.strMeasure3} ${cocktailData.strIngredient3}`}
+        else {
+            pThree.textContent = `${cocktailData.strMeasure3} ${cocktailData.strIngredient3}`
+        }
+
         if (cocktailData.strIngredient4 === null) { 
-            pFour.remove()
+            pFour.remove();
             }
-        else {pFour.textContent = `${cocktailData.strMeasure4} ${cocktailData.strIngredient4}`}
+        else {
+            pFour.textContent = `${cocktailData.strMeasure4} ${cocktailData.strIngredient4}`
+        }
+
         if (cocktailData.strIngredient5 === null) { 
-            pFive.remove()
+            pFive.remove();
         }
-        else { pFive.textContent = `${cocktailData.strMeasure5} ${cocktailData.strIngredient5}`}
+        else {
+            pFive.textContent = `${cocktailData.strMeasure5} ${cocktailData.strIngredient5}`
+        }
+
         if (cocktailData.strIngredient6 === null) { 
-            pSix.remove()
+            pSix.remove();
         }
-        else { pSix.textContent = `${cocktailData.strMeasure6} ${cocktailData.strIngredient6}`}
+        else { 
+            pSix.textContent = `${cocktailData.strMeasure6} ${cocktailData.strIngredient6}`
+        }
+
         if (cocktailData.strIngredient7 === null) {
-            pSeven.remove()
+            pSeven.remove();
         }
-        else { pSeven.textContent = `${cocktailData.strMeasure7} ${cocktailData.strIngredient7}`}
+        else { 
+            pSeven.textContent = `${cocktailData.strMeasure7} ${cocktailData.strIngredient7}`
+        }
+
         if (cocktailData.strIngredient8 === null) {
-            pEight.remove()
+            pEight.remove();
         }
-        else { pEight.textContent = `${cocktailData.strMeasure8} ${cocktailData.strIngredient8}`}
+        else { 
+            pEight.textContent = `${cocktailData.strMeasure8} ${cocktailData.strIngredient8}`
+        }
+
         if (cocktailData.strIngredient9 === null) {
-            pNine.innerHTML = ""
+            pNine.remove();
         }
-        else { pNine.textContent = `${cocktailData.strMeasure9} ${cocktailData.strIngredient9}`}
+        else { 
+            pNine.textContent = `${cocktailData.strMeasure9} ${cocktailData.strIngredient9}`
+        }
+
         directions.textContent = cocktailData.strInstructions
 
         img.src = cocktailData.strDrinkThumb
         img.className = 'cocktail-avatar'
         div.className = 'cocktailCard'
 
-        div.append(h2, img, h3, pOne, pTwo, pThree, pFour, pFive, pSix, pSeven, pEight, pNine, secondH3, p)
+        div.append(h2, img, h3, pOne, pTwo, pThree, pFour, pFive, pSix, pSeven, pEight, pNine, secondH3, directions)
         document.querySelector('#cocktailList').append(div)
     }
 
     function renderIngredientCard(ingredientData) {
-
+1
         const div = document.createElement('div')
         const h2 = document.createElement('h2')
         const pOne = document.createElement('p')
         const pTwo = document.createElement('p')
-        const btn = document.createElement('btn')
 
         h2.textContent = ingredientData.strIngredient
         pOne.textContent = ingredientData.strDescription
@@ -124,7 +150,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         div.className = 'ingredientCard'
 
-        div.append(h2, pOne, pTwo, btn)
+        div.append(h2, pOne, pTwo)
         document.querySelector('#ingredientList').append(div)
     }
     

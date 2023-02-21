@@ -12,6 +12,9 @@ Usage:
 
     ![My Image](.../Images/screenshot2.png)
 
+    Also a link to a youtube walkthrough of the functionality of the app can be found here:
+        https://youtu.be/zadD4pnIR8I
+
 
 Image of Cocktails in the app header shot by Travis Rathbone
 
