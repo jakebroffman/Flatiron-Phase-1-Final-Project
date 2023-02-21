@@ -47,85 +47,64 @@ document.addEventListener('DOMContentLoaded', (e) => {
         const h2 = document.createElement('h2')
         const img = document.createElement('img')
         const h3 = document.createElement('h3')
-        const pOne = document.createElement('p')
-        const pTwo = document.createElement('p')
-        const pThree = document.createElement('p')
-        const pFour = document.createElement('p')
-        const pFive = document.createElement('p')
-        const pSix = document.createElement('p')
-        const pSeven = document.createElement('p')
-        const pEight = document.createElement('p')
-        const pNine = document.createElement('p')
         const secondH3 = document.createElement('h3')
+        const thirdH3 = document.createElement('h3')
         const directions = document.createElement('p')
 
         h2.textContent = cocktailData.strDrink
         h3.textContent = "Cocktail Ingredients:"
         secondH3.textContent = "Directions:"
+        thirdH3.textContent = "Ingredient Measurements in Corresponding Order"
 
+        div.append(h2, img, h3)
 
-        if (cocktailData.strIngredient1 === null) {
-            pOne.remove();
+        const ingredients = {
+            ingredient1: cocktailData.strIngredient1,
+            ingredient2: cocktailData.strIngredient2,
+            ingredient3: cocktailData.strIngredient3,
+            ingredient4: cocktailData.strIngredient4,
+            ingredient5: cocktailData.strIngredient5,
+            ingredient6: cocktailData.strIngredient6,
+            ingredient7: cocktailData.strIngredient7,
+            ingredient8: cocktailData.strIngredient8,
+            ingredient9: cocktailData.strIngredient9,
         }
-        else {
-            pOne.textContent = `${cocktailData.strMeasure1} ${cocktailData.strIngredient1}`
-        }
-
-        if (cocktailData.strIngredient2 === null) {
-            pTwo.remove();
-        }
-        else {
-            pTwo.textContent = `${cocktailData.strMeasure2} ${cocktailData.strIngredient2}`
-        }
-
-        if (cocktailData.strIngredient3 === null) {
-            pThree.remove();
-        }
-        else {
-            pThree.textContent = `${cocktailData.strMeasure3} ${cocktailData.strIngredient3}`
-        }
-
-        if (cocktailData.strIngredient4 === null) { 
-            pFour.remove();
+        
+        for (const [key, value] of Object.entries(ingredients)) {
+            const ingredientList = document.createElement('ul')
+            if (value !== null) {
+                const li = document.createElement('li')
+                li.innerText = value
+                ingredientList.append(li)
             }
-        else {
-            pFour.textContent = `${cocktailData.strMeasure4} ${cocktailData.strIngredient4}`
+            div.append(ingredientList)
         }
 
-        if (cocktailData.strIngredient5 === null) { 
-            pFive.remove();
-        }
-        else {
-            pFive.textContent = `${cocktailData.strMeasure5} ${cocktailData.strIngredient5}`
+        div.append(thirdH3)
+
+        const measurements = {
+            measurement1: cocktailData.strMeasure1,
+            measurement2: cocktailData.strMeasure2,
+            measurement3: cocktailData.strMeasure3,
+            measurement4: cocktailData.strMeasure4,
+            measurement5: cocktailData.strMeasure5,
+            measurement6: cocktailData.strMeasure6,
+            measurement7: cocktailData.strMeasure7,
+            measurement8: cocktailData.strMeasure8,
+            measruement9: cocktailData.strMeasure9,
         }
 
-        if (cocktailData.strIngredient6 === null) { 
-            pSix.remove();
-        }
-        else { 
-            pSix.textContent = `${cocktailData.strMeasure6} ${cocktailData.strIngredient6}`
-        }
-
-        if (cocktailData.strIngredient7 === null) {
-            pSeven.remove();
-        }
-        else { 
-            pSeven.textContent = `${cocktailData.strMeasure7} ${cocktailData.strIngredient7}`
+        for (const [key, value] of Object.entries(measurements)) {
+            const measurementList = document.createElement('ul')
+            if (value !== null) {
+                const li = document.createElement('li')
+                li.innerText = value
+                measurementList.append(li)
+            }
+            div.append(measurementList)
         }
 
-        if (cocktailData.strIngredient8 === null) {
-            pEight.remove();
-        }
-        else { 
-            pEight.textContent = `${cocktailData.strMeasure8} ${cocktailData.strIngredient8}`
-        }
-
-        if (cocktailData.strIngredient9 === null) {
-            pNine.remove();
-        }
-        else { 
-            pNine.textContent = `${cocktailData.strMeasure9} ${cocktailData.strIngredient9}`
-        }
+        div.append(secondH3, directions)
 
         directions.textContent = cocktailData.strInstructions
 
@@ -133,7 +112,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
         img.className = 'cocktail-avatar'
         div.className = 'cocktailCard'
 
-        div.append(h2, img, h3, pOne, pTwo, pThree, pFour, pFive, pSix, pSeven, pEight, pNine, secondH3, directions)
         document.querySelector('#cocktailList').append(div)
     }
 
