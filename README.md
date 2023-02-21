@@ -28,8 +28,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](Images/screenshot.png)
-[![Product Name Screen Shot][product-screenshot]](Images/screenshot2.png)
+<img src= Images/screenshot.png alt="screenshot of web app">
+<img src= Images/screenshot2.png alt="second screenshot of web app">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
